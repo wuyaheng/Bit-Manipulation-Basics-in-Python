@@ -156,37 +156,53 @@ pre span {
       
       <!-- Article text -->
       <!-- <a class="named_anchor" name="2549202418499648455"></a> -->
-      <div id="article">
-        <div id="content"> 
-          <p>In our day-to-day life, we use decimal numbers or integers as part of the base-ten numeral system. However, computers store information in bits that are made of 0s and 1s, this comprising the base-two numeral system.</p>
+<div id="article">
+<div id="content"> 
+  <p>In our day-to-day life, we use decimal numbers or integers as part of the base-ten numeral system. However, computers store information in bits that are made of 0s and 1s, this comprising the base-two numeral system.</p>
 
-          <p>In this article, I will explain how to convert decimals into binary numbers and vice versa. I will also detail how some of Python’s bitwise operations work, explaining how individual bits of data can be worked with at their most basic level.</p>
+  <p>In this article, I will explain how to convert decimals into binary numbers and vice versa. I will also detail how some of Python’s bitwise operations work, explaining how individual bits of data can be worked with at their most basic level.</p>
 
-          <p>In order to convert an integer into its binary form, we need to use exponents of 2, as shown in the table below. Let’s take a closer look at this process, using integer 75 as an example.</p>
+  <p>In order to convert an integer into its binary form, we need to use exponents of 2, as shown in the table below. Let’s take a closer look at this process, using integer 75 as an example.</p>
 
-          <ul><li><b>How do you convert the integer 75 into its binary form?</b></li>
-            <span>Step 1: Find the largest number close to but smaller than 75 in the base-two numeral system, which is 64 (as shown in the table below).</span><br>
-            <span>Step 2: Subtract 64 from 75. This leaves us with 11.</span><br>
-            <span>Step 3: Repeat this same process until we reach 0.</span><br>
-            <span>&ensp;a) Find the largest number close to but smaller than 11, which is 8. Then, subtract 8 from 11. This leaves us with 3.</span><br>
-            <span>&ensp;b) Find the largest number close to but smaller than 3, which is 2. Then, subtract 2 from 3. This leaves us with 1.</span><br>
-            <span>&ensp;c) Find the largest number close to 1, which is 1. Then, subtract 1 from 1. This leaves us with 0.</span><br>
-            <span>Step 4: Place 1 under all numbers we used, and 0 under all numbers we didn’t use. This way, we get binary number 1001011 for integer 75.</span>
-          </ul>
-          <div class="row justify-content-center"><img class="slideSample" src="./assets/binaryTable.jpg"/></div><br>
-          <ul><li><b>How do you convert 1001011 into its integer form?</b></li>
-          <span>Step 1: Place all binary numbers in the base-two table shown above.</span><br>
-          <span>Step 2: Add together all numbers that correspond with the 1s in binary. In this case: 64 + 8 + 2 + 1 = 75; we get 75.</span><br>
-        </ul>
-        <h6><b>Bitwise AND</b></h6>
-        <p>When both bits are 1, it returns 1. Otherwise, it returns 0.</p>
-        <div class="row justify-content-center"><img class="slideSample" src="./assets/AND.png"/></div><br>
-        <h6><b>Bitwise OR</b></h6>
-        <p>As long as it has 1, it returns 1. Otherwise, it returns 0.</p>
-        <div class="row justify-content-center"><img class="slideSample" src="./assets/OR.png"/></div><br>
-        <h6><b>Bitwise XOR</b></h6>
-        <p>When both bits are the same, it returns 0. In Chinese, 相同相消.</p>
-        <div class="row justify-content-center"><img class="slideSample" src="./assets/XOR.png"/></div><br>
+  <ul><li><b>How do you convert the integer 75 into its binary form?</b></li>
+    <span>Step 1: Find the largest number close to but smaller than 75 in the base-two numeral system, which is 64 (as shown in the table below).</span><br>
+    <span>Step 2: Subtract 64 from 75. This leaves us with 11.</span><br>
+    <span>Step 3: Repeat this same process until we reach 0.</span><br>
+    <span>&ensp;a) Find the largest number close to but smaller than 11, which is 8. Then, subtract 8 from 11. This leaves us with 3.</span><br>
+    <span>&ensp;b) Find the largest number close to but smaller than 3, which is 2. Then, subtract 2 from 3. This leaves us with 1.</span><br>
+    <span>&ensp;c) Find the largest number close to 1, which is 1. Then, subtract 1 from 1. This leaves us with 0.</span><br>
+    <span>Step 4: Place 1 under all numbers we used, and 0 under all numbers we didn’t use. This way, we get binary number 1001011 for integer 75.</span>
+  </ul>
+  <div class="row justify-content-center"><img class="slideSample" src="./assets/binaryTable.jpg"/></div><br>
+  <ul><li><b>How do you convert 1001011 into its integer form?</b></li>
+  <span>Step 1: Place all binary numbers in the base-two table shown above.</span><br>
+  <span>Step 2: Add together all numbers that correspond with the 1s in binary. In this case: 64 + 8 + 2 + 1 = 75; we get 75.</span><br>
+</ul>
+<h6><b>Bitwise AND</b></h6>
+<p>When both bits are 1, it returns 1. Otherwise, it returns 0.</p>
+<div class="row justify-content-center"><img class="slideSample" src="./assets/AND.png"/></div><br>
+<h6><b>Bitwise OR</b></h6>
+<p>As long as it has 1, it returns 1. Otherwise, it returns 0.</p>
+<div class="row justify-content-center"><img class="slideSample" src="./assets/OR.png"/></div><br>
+<h6><b>Bitwise XOR</b></h6>
+<p>When both bits are the same, it returns 0. In Chinese, 相同相消.</p>
+<div class="row justify-content-center"><img class="slideSample" src="./assets/XOR.png"/></div><br>
+<p>
+  Below is a list of practice problems from Leetcode about bit manipulation for you to familiarize yourself with.
+</p>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/single-number/" target="_blank">https://leetcode.com/problems/single-number/</a></p>
+<pre>
+class Solution:
+  def singleNumber(self, nums: List[int]) -> int:
+      ans = 0
+      
+      for num in nums:
+          ans ^= num
+          
+      return ans
+</pre>
+
 </div>
       </div>
     </div>
