@@ -372,6 +372,23 @@ class Solution:
       return '-' + s if num < 0 else '' + s
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/convert-a-number-to-hexadecimal/" target="_blank">https://leetcode.com/problems/convert-a-number-to-hexadecimal/</a></p>
+<pre>
+class Solution:
+  def toHex(self, num: int) -> str:
+      s = "0123456789abcdef"      
+      ans = ""
+      
+      if num == 0:
+          return "0"
+      elif num < 0:
+          num += 2**32 
+      while num > 0:
+          ans += s[num % 16]
+          num >>= 4
+          
+      return ans[::-1]
+</pre>
 
 </div>
       </div>
