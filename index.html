@@ -326,6 +326,21 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/binary-number-with-alternating-bits/" target="_blank">https://leetcode.com/problems/binary-number-with-alternating-bits/</a></p>
+<pre>
+class Solution:
+  def hasAlternatingBits(self, n: int) -> bool:
+      flag = n & 1
+      n >>= 1
+      
+      while n > 0:
+          flag = 1 - flag
+          if (n & 1) != flag:
+              return False
+          n >>= 1
+          
+      return True
+</pre>
 
 
 </div>
