@@ -342,6 +342,36 @@ class Solution:
       return True
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/xor-operation-in-an-array/" target="_blank">https://leetcode.com/problems/xor-operation-in-an-array/</a></p>
+<pre>
+class Solution:
+  def xorOperation(self, n: int, start: int) -> int:
+      curSum = 0
+      
+      for i in range(n):
+          curSum ^= start + 2 * i
+          
+      return curSum
+</pre>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/base-7/" target="_blank">https://leetcode.com/problems/base-7/</a></p>
+<pre>
+class Solution:
+  def convertToBase7(self, num: int) -> str:
+      if num == 0:
+          return '0'
+      
+      s = ''
+      n = abs(num)
+      while n > 0:
+          s += str(n % 7)
+          n //= 7
+          
+      s = s[::-1]
+      
+      return '-' + s if num < 0 else '' + s
+</pre>
+
 
 </div>
       </div>
